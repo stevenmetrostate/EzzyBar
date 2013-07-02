@@ -1,0 +1,46 @@
+body{
+	background-color: #be661c;
+	font-size:12px;
+}
+textarea{
+	width:400px;
+}
+
+h2 {
+	font-family: Comic Sans MS;
+}
+
+div{
+	margin: auto;
+}
+
+#wrapper {
+	position: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 900px;
+}
+
+#panel {
+	border-radius: 5px 10px 5px 10px / 10px 5px 10px 5px;
+	margin-top: -200px;
+	height: 500px;
+	width:150px;
+	background-color:blue;
+	float:left;
+	display: block;
+}
+
+
+
+.ui-tabs-vertical { width: 95%;}
+.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 15em; }
+.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+.ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; border-right-width: 1px; }
+.ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: center; width: 30em; height: 30em;}
+#feedback { font-size: 1.4em; }
+#selectable .ui-selecting { background: #FECA40; }
+#selectable .ui-selected { background: #F39814; color: white; }
+#selectable { list-style-type: none; margin: 15px; padding: 15px; width: 600px; }
+#selectable li { margin: 15px; padding: 1px; float: left; width: 100px; height: 80px; font-size: 4em; text-align: center; }
