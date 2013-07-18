@@ -3,29 +3,50 @@
 	<head>
 		<link rel="shortcut icon" href="usa.ico" > <!--adds icon to browser tab-->
 		<title>EzzyBar - Bartender Screen</title>
-		<script type="text/javascript" src="js/bartender.js"></script>
+		
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/ezzybarTheme/jquery-ui-1.10.3.custom.css" />
+		
 	</head>
 	
 	<body>
-	<a href="settings.php">Settings</a>
-	<a href="logout.php">Logout</a>
+		
+	
+	<div align="right">
+		<a href="manager.php">Settings</a>
+		<a href="logout.php">Logout</a>
+	</div>
 		
 		<!--Current Drink Order-->
 		<fieldset>
+		<div align="center" id="serving">
 			<h2>Currently Serving</h2>
-			<input type="checkbox" name="idle" />Idle<br/>
+			
 			<textarea readonly>
 				<!--TODO: get current drink order from Queue-->
 			</textarea>
+			<div align="right">
+				Ready to Serve<input type="radio" name="state" value="ready"/><br/>
+				Idle<input type="radio" name="state" value="idle"/><br/>
+			</div>
+			<input type="button" name="finishDrink" value="Finish Serving" />
+		</div>
 		</fieldset>
 		
 		<!--Queue-->
 		<fieldset>
+		<div align="center" id="queue">
 			<h2>Order Queue</h2>
-				<!--TODO: get Queue information-->
+				<textarea readonly>
+					<!--TODO: get Queue-->
+				</textarea>
+		</div>
 		</fieldset>
 		
+		<script type="text/javascript" src="js/bartender.js"></script>
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
 	</body>
 
 </html>
