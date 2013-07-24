@@ -1,25 +1,9 @@
-h2 {
-	font-family: Comic Sans MS;
-}
-
-div{
-	margin: auto;
-}
-
-textarea {
-	background-color: black;
-	color: red;
-	resize: none;
-	width: 50%;
-	height: 20%;
-	
-}
-
 #wrapper {
 	position: center;
 	margin-left: auto;
 	margin-right: auto;
-	width: 900px;
+	width: 950px;
+	height: 600px;
 }
 
 #panel {
@@ -30,5 +14,22 @@ textarea {
 	background-color:blue;
 	float:left;
 	display: block;
+}
+
+#screen{
+	height: 380px;
+	width: 600px;
+	background-color:white;
+	overflow: auto;
+}
+
+#cart{
+	height: 380px;
+	width: 200px;
+	background-color:white;
+	position: absolute;
+	top: 119px;
+	right: 23px;
+	overflow: auto;
 }
 

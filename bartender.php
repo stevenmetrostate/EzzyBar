@@ -21,11 +21,10 @@
 		<fieldset>
 		<div align="center" id="serving">
 			<h2>Currently Serving</h2>
-			
-			<textarea readonly>
-				<!--TODO: get current drink order from Queue-->
-			</textarea>
-			<div align="right">
+				<div id="cServing">
+					
+				</div>
+			<div align="right" id="status">
 				Ready to Serve<input type="radio" name="state" value="ready"/><br/>
 				Idle<input type="radio" name="state" value="idle"/><br/>
 			</div>

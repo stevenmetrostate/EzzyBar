@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2013 at 06:20 AM
+-- Generation Time: Jul 24, 2013 at 03:34 AM
 -- Server version: 5.5.27-log
 -- PHP Version: 5.4.7
 
@@ -23,19 +23,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_drink`
+-- Table structure for table `tbl_customerorder`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_drink` (
-  `drinkID` int(11) NOT NULL,
-  `name` varchar(45) NOT NULL,
-  `type` varchar(45) DEFAULT NULL,
-  `description` varchar(45) DEFAULT NULL,
-  `alcoholContent` varchar(45) DEFAULT NULL,
-  `unitPrice` bigint(20) NOT NULL,
-  PRIMARY KEY (`drinkID`),
-  KEY `drinkNameAndPrice` (`name`,`unitPrice`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `tbl_customerorder` (
+  `Order_Id` varchar(25) NOT NULL,
+  `Table_Number` int(2) NOT NULL,
+  `DrinkID` int(10) NOT NULL,
+  `Total_Payment` decimal(4,2) NOT NULL,
+  `Drink_Qty` int(2) NOT NULL,
+  PRIMARY KEY (`Order_Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_drinks`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_drinks` (
+  `Drink_ID` int(5) NOT NULL AUTO_INCREMENT,
+  `Drink_Name` varchar(50) NOT NULL,
+  `Drink_Description` varchar(255) NOT NULL,
+  `Alcohol_Content` decimal(2,1) NOT NULL,
+  `Drink_Type` varchar(25) NOT NULL,
+  `Drink_Price` decimal(3,2) NOT NULL,
+  PRIMARY KEY (`Drink_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `tbl_drinks`
+--
+
+INSERT INTO `tbl_drinks` (`Drink_ID`, `Drink_Name`, `Drink_Description`, `Alcohol_Content`, `Drink_Type`, `Drink_Price`) VALUES
+(1, 'Bud Light', 'Introduced nationally in 1982, Bud Light is brewed with a malt and hops ratio different from Budweiser for a distinctively crisp taste with fewer calories.', 5.0, 'Domestic', 3.25),
+(2, 'Coors Light', 'A premium light beer with 105 calories per 12-ounce serving.', 5.0, 'Domestic', 3.25),
+(3, 'Budweiser', 'Brewed and sold since 1876, "The King of Beers" is the largest-selling beer in the world. Budweiser has been the world’s best-selling beer since 1957, and is distributed in more than 70 countries.', 5.0, 'Domestic', 3.25),
+(4, 'Heineken', '100% Barley malt, choice hops and pure water give this brew unsurpassed clarity.', 5.0, 'Import', 4.50),
+(5, 'Guinness', 'Usually called Draught; sometimes called Cold or Extra Cold - same beer, but served colder. Launched in 1961. ', 5.0, 'Import', 4.50);
 
 -- --------------------------------------------------------
 
@@ -80,36 +105,6 @@ CREATE TABLE IF NOT EXISTS `tbl_equipment` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_order`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_order` (
-  `orderID` int(11) NOT NULL,
-  `tableID` int(11) DEFAULT NULL,
-  `tax` bigint(20) DEFAULT NULL,
-  `tip` bigint(20) DEFAULT NULL,
-  `total` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`orderID`),
-  KEY `tableID_idx` (`tableID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_orderdrink`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_orderdrink` (
-  `orderID` int(11) NOT NULL,
-  `drinkID` int(11) NOT NULL,
-  `qty` int(11) DEFAULT NULL,
-  KEY `orderID_idx` (`orderID`),
-  KEY `drinkID_idx` (`drinkID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_payment`
 --
 
@@ -122,19 +117,6 @@ CREATE TABLE IF NOT EXISTS `tbl_payment` (
   `expirationYear` varchar(4) NOT NULL,
   `vendorTransactionID` int(11) NOT NULL,
   PRIMARY KEY (`paymentID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_serve`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_serve` (
-  `orderID` int(11) NOT NULL,
-  `employeeID` int(11) NOT NULL,
-  KEY `orderID_idx` (`orderID`),
-  KEY `employeeID_idx` (`employeeID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -154,56 +136,15 @@ CREATE TABLE IF NOT EXISTS `tbl_table` (
   KEY `equipmentID_idx` (`equipmentID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='	';
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_transaction`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_transaction` (
-  `orderID` int(11) NOT NULL,
-  `paymentID` int(11) NOT NULL,
-  `transactionDate` date NOT NULL,
-  KEY `orderID_idx` (`orderID`),
-  KEY `paymentID_idx` (`paymentID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `tbl_order`
---
-ALTER TABLE `tbl_order`
-  ADD CONSTRAINT `tableID` FOREIGN KEY (`tableID`) REFERENCES `tbl_table` (`tableID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `tbl_orderdrink`
---
-ALTER TABLE `tbl_orderdrink`
-  ADD CONSTRAINT `drinkID` FOREIGN KEY (`drinkID`) REFERENCES `tbl_drink` (`drinkID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `orderDrink_orderID` FOREIGN KEY (`orderID`) REFERENCES `tbl_order` (`orderID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `tbl_serve`
---
-ALTER TABLE `tbl_serve`
-  ADD CONSTRAINT `employeeID` FOREIGN KEY (`employeeID`) REFERENCES `tbl_employee` (`employeeID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `orderID` FOREIGN KEY (`orderID`) REFERENCES `tbl_order` (`orderID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `tbl_table`
 --
 ALTER TABLE `tbl_table`
   ADD CONSTRAINT `equipmentID` FOREIGN KEY (`equipmentID`) REFERENCES `tbl_equipment` (`equipmentID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `tbl_transaction`
---
-ALTER TABLE `tbl_transaction`
-  ADD CONSTRAINT `paymentID` FOREIGN KEY (`paymentID`) REFERENCES `tbl_payment` (`paymentID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `Transaction_orderID` FOREIGN KEY (`orderID`) REFERENCES `tbl_order` (`orderID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
