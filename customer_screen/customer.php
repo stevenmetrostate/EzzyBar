@@ -2,15 +2,21 @@
 <html>
 	<head>
 		<title>Order Here</title>
-		<link rel="stylesheet" type="text/css" href="css/ezzybarTheme/jquery-ui-1.10.3.custom.css">
-		<link rel="stylesheet" type="text/css" href="css/global.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+		<?php
+			include "getDrink.php";
+			include "cart.php";
+		?>
+		
+		<link rel="stylesheet" type="text/css" href="../css/ezzybarTheme/jquery-ui-1.10.3.custom.css">
+		<link rel="stylesheet" type="text/css" href="../css/global.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
 	</head>
 	<body>
 	<div id="wrapper">
 		<header><h1>EzzyBar</h1></header>
 			<div id="tabs">
-				<ul>
+				<ul align="center">
 					<li><a href="#Domestic">Domestic Beer</a></li>
 					<li><a href="#imported">Imported Beer</a></li>
 					<li><a href="#tap">Beer on Tap</a></li>
@@ -22,15 +28,15 @@
 				
 				<div id="Domestic">
 					<fieldset id="screen" name="screen">
-						<div id="displayDom"></div>
+						<?php getDom(); ?>
 					</fieldset>
 					<fieldset id="cart" name="cart">
-						<div id="addtocart"></div>
+						
 					</fieldset>
 				</div>
 				<div id="imported">
 					<fieldset id="screen" name="screen">
-						<div id="displayImp"></div>
+						<?php getImp(); ?>
 					</fieldset>
 					<fieldset id="cart" name="cart">
 						<div id="addtocart"></div>
@@ -38,7 +44,7 @@
 				</div>
 				<div id="tap">
 					<fieldset id="screen" name="screen">
-						<div id="displayTap"></div>
+						<?php getTap(); ?>
 					</fieldset>
 					<fieldset id="cart" name="cart">
 						<div id="addtocart"></div>
@@ -46,7 +52,7 @@
 				</div>
 				<div id="liquor">
 					<fieldset id="screen" name="screen">
-						<div id="displayLiq"></div>
+						<?php getLiq(); ?>
 					</fieldset>
 					<fieldset id="cart" name="cart">
 						<div id="addtocart"></div>
@@ -54,7 +60,7 @@
 				</div>
 				<div id="mixed">
 					<fieldset id="screen" name="screen">
-						<div id="displayMix"></div>
+						<?php getMix(); ?>
 					</fieldset>
 					<fieldset id="cart" name="cart">
 						<div id="addtocart"></div>
@@ -62,7 +68,7 @@
 				</div>
 				<div id="wine">
 					<fieldset id="screen" name="screen">
-						<div id="displayWin"></div>
+						<?php getWin(); ?>
 					</fieldset>
 					<fieldset id="cart" name="cart">
 						<div id="addtocart"></div>
@@ -70,7 +76,7 @@
 				</div>
 				<div id="non-alcoholic">
 					<fieldset id="screen" name="screen">
-						<div id="displayNon"></div>
+						<?php getNon(); ?>
 					</fieldset>
 					<fieldset id="cart" name="cart">
 						<div id="addtocart"></div>
@@ -85,9 +91,9 @@
 		</footer>
 	</div>
 		
-		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
-		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.js"></script>
-		<script type="text/javascript" src="js/bartender.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="../js/jquery-ui-1.10.3.custom.js"></script>
+		<script type="text/javascript" src="../js/customer.js"></script>
 	</body>
 
 </html>
