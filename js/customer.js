@@ -9,18 +9,29 @@ $(document).ready(function(){
 		var drinkPrice = [];
 		var drinkID = [];
 		var drinkName = [];
-		$(".drinkPrice").each(function(){alert($(this).val());});
-		//$(".drinkPrice").each(function(i){drinkPrice[i] = $(this).val();});
-		//$(".drinkID").each(function(i){drinkPrice[i] = $(this).val();});
-		//$(".drinkName").each(function(i){drinkPrice[i] = $(this).val();});
-		//$(".drinkName").each("value");
-		//alert(drinkPrice+" "+drinkID+" "+drinkName);
+		//$(".drinkPrice").each(function(){alert($(this).val());});
+		
+		$(".drinkPrice").each(
+			function(i){
+				drinkPrice[i] = $(this).val();
+			});
+			
+		$(".drinkID").each(
+			function(i){
+				drinkID[i] = $(this).val();
+			});
+			
+		$(".drinkName").each(
+			function(i){
+				drinkName[i] = $(this).val();
+			});
+		alert(drinkPrice[1]+" "+drinkID[1]+" "+drinkName[1]);
 		
 		$.post("cart.php",
 		{
-			drinkID: drinkID,
-			drinkPrice: drinkPrice,
-			drinkName: drinkName
+			drinkID: drinkID[1],
+			drinkPrice: drinkPrice[1],
+			drinkName: drinkName[1]
 		},
 		function(){
 		location.reload();
