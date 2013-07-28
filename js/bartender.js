@@ -1,4 +1,4 @@
-$('#tabs').tabs();
+
 
 //not needed...
 function createTable() {
