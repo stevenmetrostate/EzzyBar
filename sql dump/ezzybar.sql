@@ -3,8 +3,13 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Jul 26, 2013 at 12:46 PM
 -- Server version: 5.5.27
+=======
+-- Generation Time: Jul 28, 2013 at 08:01 PM
+-- Server version: 5.5.27-log
+>>>>>>> origin/Customer-Branch
 -- PHP Version: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
@@ -27,6 +32,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_cart` (
+<<<<<<< HEAD
   `Dom_ID` int(11) NOT NULL,
   `Imp_ID` int(11) NOT NULL,
   `Liq_ID` int(11) NOT NULL,
@@ -35,6 +41,13 @@ CREATE TABLE IF NOT EXISTS `tbl_cart` (
   `Win_ID` int(11) NOT NULL,
   `Non_ID` int(11) NOT NULL,
   `qty` int(11) NOT NULL
+=======
+  `Cart_ID` int(5) NOT NULL,
+  `Drink_ID` int(5) NOT NULL,
+  `Drink_Name` varchar(50) NOT NULL,
+  `QTY` int(11) NOT NULL,
+  `Drink_Price` decimal(5,2) NOT NULL
+>>>>>>> origin/Customer-Branch
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -58,6 +71,7 @@ CREATE TABLE IF NOT EXISTS `tbl_customerorder` (
 -- Table structure for table `tbl_domestic`
 --
 
+<<<<<<< HEAD
 CREATE TABLE IF NOT EXISTS `tbl_domestic` (
   `Dom_ID` int(5) NOT NULL AUTO_INCREMENT,
   `Dom_Name` varchar(50) NOT NULL,
@@ -67,6 +81,17 @@ CREATE TABLE IF NOT EXISTS `tbl_domestic` (
   `Drink_Price` decimal(3,2) NOT NULL,
   PRIMARY KEY (`Dom_ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+=======
+CREATE TABLE IF NOT EXISTS `tbl_drinks` (
+  `Drink_ID` int(5) NOT NULL AUTO_INCREMENT,
+  `Drink_Name` varchar(50) NOT NULL,
+  `Drink_Description` varchar(255) NOT NULL,
+  `Alcohol_Content` decimal(4,1) NOT NULL,
+  `Drink_Type` varchar(25) NOT NULL,
+  `Drink_Price` decimal(5,2) NOT NULL,
+  PRIMARY KEY (`Drink_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+>>>>>>> origin/Customer-Branch
 
 --
 -- Dumping data for table `tbl_domestic`
@@ -75,7 +100,19 @@ CREATE TABLE IF NOT EXISTS `tbl_domestic` (
 INSERT INTO `tbl_domestic` (`Dom_ID`, `Dom_Name`, `Dom_Description`, `Alcohol_Content`, `Drink_Type`, `Drink_Price`) VALUES
 (1, 'Bud Light', 'Introduced nationally in 1982, Bud Light is brewed with a malt and hops ratio different from Budweiser for a distinctively crisp taste with fewer calories.', 5.0, 'Domestic', 3.25),
 (2, 'Coors Light', 'A premium light beer with 105 calories per 12-ounce serving.', 5.0, 'Domestic', 3.25),
+<<<<<<< HEAD
 (3, 'Budweiser', 'Brewed and sold since 1876, "The King of Beers" is the largest-selling beer in the world. Budweiser has been the world’s best-selling beer since 1957, and is distributed in more than 70 countries.', 5.0, 'Domestic', 3.25);
+=======
+(3, 'Budweiser', 'Brewed and sold since 1876, "The King of Beers" is the largest-selling beer in the world. Budweiser has been the world’s best-selling beer since 1957, and is distributed in more than 70 countries.', 5.0, 'Domestic', 3.25),
+(4, 'Imported Beer', 'asdf', 5.0, 'Import', 5.00),
+(5, 'Liquor', 'asdf', 40.0, 'Liquor', 5.00),
+(6, 'Mixed', 'asdf', 25.0, 'Mixed', 5.00),
+(7, 'Non Alcoholic', 'gre', 0.0, 'Non-Alcoholic', 2.00),
+(8, 'Wine', 'Winery', 20.0, 'Wine', 5.00),
+(9, 'Coors Light - 16oz', 'Tapped from a Keg', 5.0, 'Tap', 4.50),
+(10, 'Blue Moon - 22oz', 'Tapped from a Keg', 5.0, 'Tap', 6.00),
+(11, 'Redd''s Apple', 'Taste like Apple Juice!', 5.0, 'Domestic', 3.50);
+>>>>>>> origin/Customer-Branch
 
 -- --------------------------------------------------------
 
