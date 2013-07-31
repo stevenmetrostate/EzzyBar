@@ -7,9 +7,10 @@ $(document).ready(function(){
 		{
 			drinkID: id
 		},
-		function(){
+		function(result){
 			$('#cart').load('customer.php #carts');
 		});
+		
 	});
 });
 
@@ -32,8 +33,14 @@ $(document).ready(function(){
 	$("#resetAll").click(function(){
 	$.post("resetCart.php",
 		function(){
-			$('#cart').load('customer.php #carts');
+			$('#cart').load('customer.php #carts');	
 		});
+	});
+});
+
+$(document).ready(function(){
+	$("#payment").submit(function(){
+		$.post("addCartToDB.php");
 	});
 });
 

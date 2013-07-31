@@ -152,7 +152,7 @@
 	
 	function getCart(){
 		$getCart = mysql_query("SELECT * FROM tbl_cart");
-		$getPrice = mysql_query("SELECT * FROM tbl_totalprice WHERE Cart_ID=1");
+		$getPrice = mysql_query("SELECT Total_Price FROM tbl_totalprice WHERE Cart_ID=1");
 		$row1 = mysql_fetch_array($getPrice);
 
 		echo "<table>";
@@ -174,7 +174,9 @@
 		}
 		echo "</table>";
 		echo "<hr />";
-		echo "<p align='right' id='total'>$0.00</p>";
+		echo "<p align='right' id='total'>$";
+		echo $row1["Total_Price"];
+		echo "</p>";
 	}
 	
 ?>

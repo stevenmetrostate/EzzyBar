@@ -73,7 +73,7 @@
 					</div>
 					<div id="addtocart"></div>
 				</fieldset>
-				<form action="Payment.php" method="POST" >
+				<form action="Payment.php" method="POST" id="payment" >
 					<input type="submit" id="pay" value="Pay Now" />
 					<input type="button" id="resetAll" value="Reset Cart" />
 				</form>
