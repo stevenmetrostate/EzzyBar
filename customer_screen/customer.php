@@ -29,70 +29,60 @@
 					<fieldset id="screen" name="screen">
 						<?php getDom(); ?>
 					</fieldset>
-					<fieldset id="cart" name="cart">
-						<?php getCart(); ?>
-						<div id="addtocart"></div>
-					</fieldset>
+
 				</div>
 				<div id="imported">
 					<fieldset id="screen" name="screen">
 						<?php getImp(); ?>
 					</fieldset>
-					<fieldset id="cart" name="cart">
-						<?php getCart(); ?>
-						<div id="addtocart"></div>
-					</fieldset>
+
 				</div>
 				<div id="tap">
 					<fieldset id="screen" name="screen">
 						<?php getTap(); ?>
-					</fieldset>
-					<fieldset id="cart" name="cart">
-						<?php getCart(); ?>
-						<div id="addtocart"></div>
-					</fieldset>
+					</fieldset>					
+
 				</div>
 				<div id="liquor">
 					<fieldset id="screen" name="screen">
 						<?php getLiq(); ?>
-					</fieldset>
-					<fieldset id="cart" name="cart">
-						<?php getCart(); ?>
-						<div id="addtocart"></div>
-					</fieldset>
+					</fieldset>					
+
 				</div>
 				<div id="mixed">
 					<fieldset id="screen" name="screen">
 						<?php getMix(); ?>
-					</fieldset>
-					<fieldset id="cart" name="cart">
-						<?php getCart(); ?>
-						<div id="addtocart"></div>
-					</fieldset>
+					</fieldset>					
+					
 				</div>
 				<div id="wine">
 					<fieldset id="screen" name="screen">
 						<?php getWin(); ?>
-					</fieldset>
-					<fieldset id="cart" name="cart">
-						<?php getCart(); ?>
-						<div id="addtocart"></div>
-					</fieldset>
+					</fieldset>					
+
 				</div>
 				<div id="non-alcoholic">
 					<fieldset id="screen" name="screen">
 						<?php getNon(); ?>
 					</fieldset>
-					<fieldset id="cart" name="cart">
-						<?php getCart(); ?>
-						<div id="addtocart"></div>
-					</fieldset>
+		
 				</div>
+				<fieldset id="cart" name="cart">
+					<div id="carts" >
+						<?php getCart(); ?>
+					</div>
+					<div id="addtocart"></div>
+				</fieldset>
+				<form action="Payment.php" method="POST" >
+					<input type="submit" id="pay" value="Pay Now" />
+					<input type="button" id="resetAll" value="Reset Cart" />
+				</form>
 			</div>
 
 		<footer>
 			<p>EzzyBar Inc. | CopyNotRighted</p>
 		</footer>
+		
 	</div>
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

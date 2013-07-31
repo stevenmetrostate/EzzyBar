@@ -24,15 +24,32 @@
 }
 
 #cart{
-	height: 380px;
+	height: 300px;
 	width: 200px;
 	background-color:white;
 	position: absolute;
-	top: 119px;
-	right: 23px;
+	bottom: 140px;
+	left: 670px;
 	overflow: auto;
 }
 
 #name{
 	font-style:bold;
+}
+
+#pay{
+	position:relative;
+	bottom:85px;
+	left:670px;
+}
+
+#resetAll{
+	position:relative;
+	bottom:85px;
+	left:670px;;
+}
+
+.reset{
+	width: 50%
+	height: auto;
 }
