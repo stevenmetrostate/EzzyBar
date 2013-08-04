@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Order Here</title>
+		<title>EzzyBar - Order Here</title>
 		
 		<?php
 			include "getDrinks.php";
