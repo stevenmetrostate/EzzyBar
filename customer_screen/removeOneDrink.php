@@ -24,5 +24,20 @@
 		$sql2 = "UPDATE tbl_cart SET QTY=$qty, Drink_Price=$drinkPrice WHERE Drink_ID = '$drinkID' and Cart_ID = '$cartID'";
 		mysql_query($sql2);
 	}
+	
+	$total = 0;
+		
+	$sql3 = mysql_query("SELECT Drink_Price FROM tbl_cart");
+	while($row=mysql_fetch_array($sql3)){
+		$total = $total + $row["Drink_Price"];
+	}
+	
+	mysql_query("UPDATE tbl_totalprice SET Total_Price=$total WHERE Cart_ID = '$cartID'");
+		
+	$sql4 = mysql_query("SELECT Total_Price FROM tbl_totalprice WHERE Cart_ID='$cartID'");
+	$row12 = mysql_fetch_array($sql4);
+	$totalprice = $row12["Total_Price"];
+	
+	echo $totalprice;
 
 ?>

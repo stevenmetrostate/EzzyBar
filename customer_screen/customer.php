@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Order Here</title>
+		<title>EzzyBar - Order Here</title>
 		
 		<?php
 			include "getDrink.php";
@@ -82,6 +82,19 @@
 						<div id="addtocart"></div>
 					</fieldset>
 				</div>
+<<<<<<< HEAD
+=======
+				<fieldset id="cart" name="cart">
+					<div id="carts" >
+						<?php getCart(); ?>
+					</div>
+					<div id="addtocart"></div>
+				</fieldset>
+				<form action="Payment.php" method="POST" id="payment" >
+					<input type="submit" id="pay" value="Pay Now" />
+					<input type="button" id="resetAll" value="Reset Cart" />
+				</form>
+>>>>>>> origin/Customer-Branch
 			</div>
 			
 			
