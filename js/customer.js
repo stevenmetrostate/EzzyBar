@@ -1,34 +1,3 @@
-<<<<<<< HEAD
-$('#tabs').tabs();
-
-$(function(){
-	$('#Dom').click(
-		function(){
-			$.ajax({
-				//var name = $(this).attr('value');
-				type : "GET",
-				url: "cart.php",
-				data : "call = addDomItem";
-				success: function() {
-					alert('hi');
-				}
-			});
-		});
-});
-
-
-/*function addToCart(item){
-	var x = item;
-	var a = document.getElementsByClassName('add');
-	alert(a);
-	/*if(a.id == "Dom"){
-		alert('dom');
-	}
-	else if (a.id == "Imp"){
-		alert('imp');
-	}
-	else {alert('null');}*/
-=======
 $(document).ready(function(){
 	$("input.drink").click(function(){
 
@@ -69,13 +38,9 @@ $(document).ready(function(){
 	});
 });
 
-<<<<<<< HEAD
->>>>>>> origin/Customer-Branch
-=======
 $(document).ready(function(){
 	$("#payment").submit(function(){
 		$.post("addCartToDB.php");
 	});
 });
 
->>>>>>> origin/Customer-Branch

@@ -1,49 +1,4 @@
 <?php
-<<<<<<< HEAD
-	include "database.php";
-	
-	function addDomItem(){
-		echo 'hi';
-	}
-	
-	function addImpItem(){
-		
-	}
-	
-	function addLiqItem(){
-		
-	}
-	
-	function addTapItem(){
-		
-	}
-	
-	function addMixItem(){
-		
-	}
-	
-	function addWinItem(){
-		
-	}
-	
-	function addNonItem(){
-		
-		
-	}
-
-
-
-
-	function removeAll(){
-		
-
-	}
-
-
-	function removeOne(){
-		
-
-=======
 	require "database.php";
 	
 	$drinkID = $_POST['drinkID'];
@@ -83,11 +38,7 @@
 	else{ //if the added drink exists in cart, do this.
 		$sql2 = "UPDATE tbl_cart SET QTY=$qty, Drink_Price=$drinkPrice WHERE Drink_ID = '$drinkID' and Cart_ID = '$cartID'";
 		mysql_query($sql2);
-<<<<<<< HEAD
->>>>>>> origin/Customer-Branch
-=======
 
->>>>>>> origin/Customer-Branch
 	}
 	
 	$total = 0;
