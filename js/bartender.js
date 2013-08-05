@@ -33,6 +33,8 @@ $(document).ready(function(){
   },3000);
 });
 
+
+
 //when finish order button is clicked, do this..
 $(document).ready(function(){
 	$("#finishOrder").click(function(){

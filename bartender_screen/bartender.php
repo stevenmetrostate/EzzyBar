@@ -12,8 +12,8 @@
 		<link rel="shortcut icon" href="usa.ico" > <!--adds icon to browser tab-->
 		<title>EzzyBar - Bartender Screen</title>
 		
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/ezzybarTheme/jquery-ui-1.10.3.custom.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/ezzybarTheme/jquery-ui-1.10.3.custom.css" />
 		
 	</head>
 	
